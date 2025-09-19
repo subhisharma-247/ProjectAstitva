@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shiba 3D Model</title>
+
+  <!-- model-viewer script (Google CDN) -->
+   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f036;
+    } 
+
+     model-viewer {
+      width: 100%;
+      height: auto;
+      max-width: 800px;  /* Large screens */
+      aspect-ratio: 1 / 1; /* keeps square shape */
+    }
+
+    /* Tablet screens */
+    @media (max-width: 768px) {
+      model-viewer {
+        max-width: 90%;
+      }
+    }
+
+    /* Mobile screens */
+    @media (max-width: 480px) {
+      model-viewer {
+        max-width: 100%;
+      }
+    } 
+  </style>
+</head>
+<body>
+  
+  <!-- ✅ Your 3D Model --> 
+  <model-viewer 
+    src="model/qutub_minar/scene.gltf" 
+    alt="Qutub Minar"
+    auto-rotate 
+    camera-controls
+    ar
+    shadow-intensity="1">
+  </model-viewer>
+
+
+  <!-- Right Half: AI Avatar Narrator --> 
+   
+  <div class="half" id="avatar-container">
+    <!-- Replace this with your avatar video/animation  -->
+      <video autoplay loop muted controls style="max-width: 90%; border-radius: 10px;">
+        <source src="qutubminar.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video>
+  </div>
+
+</body>
+</html> 

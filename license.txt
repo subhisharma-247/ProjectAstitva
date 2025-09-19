@@ -1,0 +1,11 @@
+Model Information:
+* title:	Qutub minar
+* source:	https://sketchfab.com/3d-models/qutub-minar-6cc3db90b7464ba7b4627fcd19f78feb
+* author:	kadamom313 (https://sketchfab.com/kadamom313)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Qutub minar" (https://sketchfab.com/3d-models/qutub-minar-6cc3db90b7464ba7b4627fcd19f78feb) by kadamom313 (https://sketchfab.com/kadamom313) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shiba Scanner</title>
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    #reader {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 20px;
+    }
+
+    #result {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+      word-wrap: break-word;
+      padding: 10px;
+    }
+
+    /* Tablet */
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+      #reader {
+        max-width: 300px;
+      }
+      #result {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 1.2rem;
+      }
+      #reader {
+        max-width: 250px;
+      }
+      #result {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>📷 Scan to View Shiba Model</h2>
+  <div id="reader"></div>
+  <p id="result">Waiting for scan...</p>
+
+  <script>
+    function onScanSuccess(decodedText) {
+      document.getElementById("result").innerText = "Scanned: " + decodedText;
+
+      // Redirect to the scanned URL
+      if (decodedText.startsWith("http")) {
+        window.location.href = decodedText;
+      }
+
+      // fallback to local model
+      window.location.href = "/AR-Skill-Learning.html";
+    }
+
+    function onScanFailure(error) {
+      // keep scanning, ignore errors
+    }
+
+    const html5QrCode = new Html5Qrcode("reader");
+
+    html5QrCode.start(
+      { facingMode: "environment" }, // use back camera
+      {
+        fps: 10,   // frames per second
+        qrbox: { width: 250, height: 250 } // scanning box size
+      },
+      onScanSuccess,
+      onScanFailure
+    ).catch(err => {
+      document.getElementById("result").innerText = "Camera error: " + err;
+    });
+  </script>
+</body>
+</html>
